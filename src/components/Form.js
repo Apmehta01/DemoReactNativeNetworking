@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   Alert
 } from 'react-native';
+import {Actions} from 'react-native-router-flux';
 
 export default class Form extends Component {
    constructor(props) {
@@ -69,12 +70,19 @@ export default class Form extends Component {
     );
      if (response.status = 200 ) {
         alert("Login Successfully!!!");
+        this.gotoHome();
      }
    } catch (errors) {
 
      alert(errors);
     } 
  }
+
+  gotoHome()
+  {
+    Actions.Home()
+  }
+
  render() {
    return(
      <View  style={styles.container}>
